@@ -114,8 +114,8 @@ h4 iperf -c h1
 
 ### 🔹 Linear Topology
 
-* pingall output
-* iperf result
+<img width="239" height="85" alt="image" src="https://github.com/user-attachments/assets/f88315ab-8f51-43b9-9284-346d72f4ff92" />
+
 
 ### 🔹 Single Topology
 
