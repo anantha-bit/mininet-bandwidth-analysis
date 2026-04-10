@@ -1,1 +1,155 @@
+# 📡 Bandwidth Measurement using Mininet & iperf
+
+## 📌 Overview
+
+This project demonstrates how to measure network bandwidth using Mininet. Different network topologies are created and tested using the `iperf` tool to observe throughput between hosts.
+
+---
+
+## 🎯 Objective
+
+* Create virtual networks using Mininet
+* Test connectivity using ping
+* Measure bandwidth using iperf
+* Demonstrate working network behavior
+
+---
+
+## 🛠️ Tools Used
+
+* Ubuntu (WSL)
+* Mininet
+* Open vSwitch
+* iperf
+
+---
+
+## ⚙️ Setup Steps
+
+```bash
+sudo apt update
+sudo apt install mininet -y
+sudo apt install openvswitch-switch -y
+sudo apt install iperf -y
+```
+
+---
+
+## 🌐 Topology 1: Linear
+
+### Run:
+
+```bash
+sudo mn --topo linear,2
+```
+
+### Test Connectivity:
+
+```bash
+pingall
+```
+
+### Run Bandwidth Test:
+
+```bash
+h1 iperf -s &
+h2 iperf -c h1
+```
+
+---
+
+## 🌐 Topology 2: Single Switch
+
+### Run:
+
+```bash
+sudo mn --topo single,3
+```
+
+### Test:
+
+```bash
+pingall
+```
+
+### Run:
+
+```bash
+h1 iperf -s &
+h3 iperf -c h1
+```
+
+---
+
+## 🌐 Topology 3: Tree
+
+### Run:
+
+```bash
+sudo mn --topo tree,depth=2,fanout=2
+```
+
+### Check Nodes:
+
+```bash
+nodes
+```
+
+### Test:
+
+```bash
+pingall
+```
+
+### Run:
+
+```bash
+h1 iperf -s &
+h4 iperf -c h1
+```
+
+---
+
+## 📸 Output Screenshots
+
+### 🔹 Linear Topology
+
+* pingall output
+* iperf result
+
+### 🔹 Single Topology
+
+* iperf result
+
+### 🔹 Tree Topology
+
+* iperf result
+
+---
+
+## 📂 Commands Used
+
+```bash
+sudo mn --topo linear,2
+h1 iperf -s &
+h2 iperf -c h1
+
+sudo mn --topo single,3
+h1 iperf -s &
+h3 iperf -c h1
+
+sudo mn --topo tree,depth=2,fanout=2
+h1 iperf -s &
+h4 iperf -c h1
+```
+
+---
+
+## 📚 Conclusion
+
+This project successfully demonstrates bandwidth measurement in different network topologies using Mininet and iperf.
+
+---
+
+
 
