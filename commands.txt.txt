@@ -1,0 +1,11 @@
+sudo mn --topo linear,2
+h1 iperf -s &
+h2 iperf -c h1
+
+sudo mn --topo single,3
+h1 iperf -s &
+h3 iperf -c h1
+
+sudo mn --topo tree,depth=2,fanout=2
+h1 iperf -s &
+h4 iperf -c h1
